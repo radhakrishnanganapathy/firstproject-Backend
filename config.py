@@ -1,4 +1,9 @@
 
+origins = [ "https://localhost:8080",
+            "http://localhost:8080",
+            "http://localhost:8005",
+]
+
 
 API_v1 = '/name/type'
 
