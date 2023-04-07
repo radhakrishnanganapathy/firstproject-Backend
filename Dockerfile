@@ -11,6 +11,7 @@ ENV PYTHONUNBUFFERED 1
 # copy to docker cache
 COPY ./requirements.txt /code/requirements.txt
 
+RUN pip install --upgrade pip
 # install all requirements
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
