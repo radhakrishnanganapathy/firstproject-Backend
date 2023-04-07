@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
 
-from app.Endpoint import IncomeExpness
-from app.Endpoint import SignUp
-from app.Endpoint import RawMaterial
+from Endpoint import IncomeExpness
+from Endpoint import SignUp
+from Endpoint import RawMaterial
 
 api_router = APIRouter()
 

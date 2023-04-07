@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, Body
-from app.schemas import schemas
-from app.models.RawMaterial import RawMaterial
-from app.DataBase.db import get_db
+from schemas import schemas
+from models.RawMaterial import RawMaterial
+from DataBase.db import get_db
 from sqlalchemy.orm import Session
 
 

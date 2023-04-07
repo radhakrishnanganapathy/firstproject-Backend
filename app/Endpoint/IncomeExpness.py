@@ -1,9 +1,9 @@
 from fastapi import APIRouter
-from app.models.IncomeExpness import IncomeExpeness
+from models.IncomeExpness import IncomeExpeness
 from sqlalchemy.orm import Session
-from app.DataBase.db import get_db
+from DataBase.db import get_db
 from fastapi import Depends, Body
-from app.schemas import schemas
+from schemas import schemas
 router = APIRouter()
 
 @router.get('/home')
