@@ -1,9 +1,9 @@
-fastapi==0.75.0
-fastapi_keycloak==1.0.0
-pydantic==1.9.0
+fastapi
+fastapi_keycloak
+pydantic
 pydantic[email]
-SQLAlchemy==1.4.32
-psycopg2==2.9.3
-python-multipart==0.0.5
+SQLAlchemy
+psycopg2
+python-multipart
 pytest
 # smtplib
