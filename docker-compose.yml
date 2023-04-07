@@ -1,0 +1,42 @@
+# docker-compose.yml
+
+version: '3.8'
+
+networks:
+  my_first_project:
+    name: my_first_project
+    driver: bridge
+
+services:
+  fastapi:
+    container_name : project_rk
+    build: .
+    # command: bash -c 'until nc -z postgres 5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0'
+    command: bash -c 'uvicorn app.main:app --host 0.0.0.0 --reload'
+    volumes:
+      - .:/app
+    ports:
+      - 8001:8000
+    environment:
+      - DATABASE_URL=postgresql://postgres:root123@db:5432/myproj
+
+      
+    depends_on:
+      - db
+    networks:
+      - my_first_project
+
+
+  db:
+    container_name : myfirstproject_postgres
+    image: postgres
+    volumes:
+      - ./POSTGRES_DATA:/var/lib/postgresql@15/data/
+    ports:
+      - 5432
+    environment:
+      POSTGRES_DB: myproj
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root123
+    networks:
+      - my_first_project
