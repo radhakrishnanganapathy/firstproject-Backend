@@ -12,7 +12,7 @@ services:
     container_name : project_rk
     build: .
     # command: bash -c 'until nc -z postgres 5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0'
-    command: bash -c 'uvicorn app.main:app --host 0.0.0.0 --reload'
+    command: bash -c 'uvicorn main:app --host 0.0.0.0 --reload'
     volumes:
       - .:/app
     ports:
