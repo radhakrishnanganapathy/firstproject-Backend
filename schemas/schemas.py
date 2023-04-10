@@ -3,7 +3,7 @@ from datetime import date
 
 class NewUserCreate(BaseModel):
     username: str
-    email: EmailStr
+    email: str
     mobile: int
     password: str
 
@@ -12,7 +12,7 @@ class NewUserCreate(BaseModel):
 
 class UserLogIn(BaseModel):
     username: str
-    password: SecretStr
+    password: str
 
     class Config:
         orm_mode = True
