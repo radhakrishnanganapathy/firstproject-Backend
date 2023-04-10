@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # copy codebase to working directory
-COPY . /code
+COPY ./app /code
 
 # ENV PYTHONPATH = /code
 
