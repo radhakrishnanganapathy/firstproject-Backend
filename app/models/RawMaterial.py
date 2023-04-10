@@ -1,5 +1,5 @@
-from schemas import schemas
-from DataBase.db import Base
+from app.schemas import schemas
+from app.DataBase.db import Base
 from sqlalchemy.orm import Session
 from sqlalchemy import Integer, String, Column
 

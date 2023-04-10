@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # copy codebase to working directory
-COPY ./app /code
+COPY ./app /code/app
 
 # ENV PYTHONPATH = /code
 
@@ -24,4 +24,4 @@ COPY ./app /code
 # RUN  mkdir -p /uploads/depots /uploads/suppliers
 
 # run the FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

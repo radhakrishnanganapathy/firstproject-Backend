@@ -1,6 +1,6 @@
 from sqlalchemy import Integer, String, Column, Boolean, Date, Time
-from DataBase.db import Base
-from schemas import schemas
+from app.DataBase.db import Base
+from app.schemas import schemas
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 class IncomeExpeness(Base):
