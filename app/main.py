@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+db.CreateTable()
+
 # CORS settings
 app.add_middleware(
     CORSMiddleware,
@@ -19,6 +21,5 @@ app.add_middleware(
 def index():
     return {'I am':'alive'}
 
-db.CreateTable()
 
 app.include_router(api_router, prefix=config.API_v1)

@@ -16,7 +16,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - 8001:8000
+      - 8005:8000
     environment:
       # - DATABASE_URL=postgresql://postgres:root123@db:5432/myproj
       - DATABASE_URL=postgresql+psycopg2://radhakrishnan_user:PfNSlVmjWwBthsT6EsxCWC9xcyNjsbBf@dpg-cgq0nr0u9tun42uokpb0-a:5432/radhakrishnan
@@ -36,8 +36,8 @@ services:
     ports:
       - 5432
     environment:
-      POSTGRES_DB: radhakrishnan
-      POSTGRES_USER: radhakrishnan_user
-      POSTGRES_PASSWORD: PfNSlVmjWwBthsT6EsxCWC9xcyNjsbBf
+      POSTGRES_DB:  radhakrishnan
+      POSTGRES_USER:  radhakrishnan_user
+      POSTGRES_PASSWORD:  PfNSlVmjWwBthsT6EsxCWC9xcyNjsbBf
     networks:
       - my_first_project

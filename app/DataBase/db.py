@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 DATABASE_URL = 'postgresql+psycopg2://radhakrishnan_user:PfNSlVmjWwBthsT6EsxCWC9xcyNjsbBf@dpg-cgq0nr0u9tun42uokpb0-a:5432/radhakrishnan'
 engine = create_engine(DATABASE_URL)
-# engine = create_engine('postgresql://postgres:root123@localhost:5432/myproj')
+# engine = create_engine('postgresql://postgres:ags009@localhost:5432/myproj')
 
 SessionLocal = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
@@ -21,3 +21,5 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
