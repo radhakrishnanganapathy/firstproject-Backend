@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from ..config import settings
+# from ..config import settings
 # import config 
 
 DATABASE_URL = 'postgresql+psycopg2://radhakrishnan_user:PfNSlVmjWwBthsT6EsxCWC9xcyNjsbBf@dpg-cgq0nr0u9tun42uokpb0-a:5432/radhakrishnan'
