@@ -29,3 +29,6 @@ class SignUp(Base):
     def login(db:Session, Username:str, password:str):
         db_return = db.query(SignUp).filter(Username == SignUp.username).filter(password == SignUp.password).first()
         return db_return
+    def getall(db:Session):
+        db_return = db.query(SignUp).all()
+        return db_return

@@ -4,6 +4,7 @@ from app.models.SignUp import SignUp
 from app.DataBase.db import get_db
 from sqlalchemy.orm import Session
 
+
 router = APIRouter()
 
 @router.post('/create-user')

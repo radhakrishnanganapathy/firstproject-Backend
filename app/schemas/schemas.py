@@ -18,17 +18,43 @@ class UserLogIn(BaseModel):
         orm_mode = True
 
 
-class IncomeExpnessCreate(BaseModel):
-    incomeexpness : bool
+class ProductionCreate(BaseModel):
+    item : str
+    quantity: int
     amount : int
-    description : str
     createddate : date
 #     time: Time
 
     class Config:
         orm_mode = True
 
-class IncomeExpnessRead(IncomeExpnessCreate):
+class ProductionRead(ProductionCreate):
+    id: int
+
+class SalesCreate(BaseModel):
+    item : str
+    customer: str
+    quantity: int
+    amount : int
+    createddate : date
+#     time: Time
+
+    class Config:
+        orm_mode = True
+
+class SalesRead(SalesCreate):
+    id: int
+
+class SalaryCreate(BaseModel):
+    worker : str
+    salary: int
+    createddate : date
+#     time: Time
+
+    class Config:
+        orm_mode = True
+
+class SalaryRead(SalaryCreate):
     id: int
 
 class RawMaterialCreate(BaseModel):
