@@ -3,6 +3,7 @@ from app.DataBase.db import Base
 from app.schemas import schemas
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
+
 class Production(Base):
      __tablename__ = 'production'
 

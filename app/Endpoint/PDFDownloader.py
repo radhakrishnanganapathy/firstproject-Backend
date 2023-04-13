@@ -36,6 +36,12 @@ def pdf_downlaod_dynamic(TableName:str,db:Session=Depends(get_db)):
           TableClass = Salary
      elif TableName == 'raw_material':
           TableClass = RawMaterial
+     elif TableName == 'production':
+          TableClass = Production
+     elif TableName == 'sales':
+          TableClass = Sales
+     else:
+          return {'DB':'Not Found'}
      item = db.query(TableClass).all()
      column_key = TableClass.__table__.columns.keys()
      pdf_buffer = io.BytesIO()
