@@ -4,7 +4,10 @@ from app.Api.api import api_router
 from app import config
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(
+    title = "My First Online Projects",
+    description = config.app_description,
+)
 
 db.CreateTable()
 

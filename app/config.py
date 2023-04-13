@@ -8,6 +8,10 @@ origins = [ "https://localhost:8082",
             "https://radhakrishnanganapathy.netlify.app"
 ]
 
+app_description = """
+DataBase Name: salary, raw_material, production,sales
+
+"""
 
 API_v1 = '/name/type'
 
