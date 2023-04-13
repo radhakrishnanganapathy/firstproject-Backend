@@ -32,11 +32,15 @@ router = APIRouter()
 
 @router.get('/pdf-downloader')
 def pdf_downlaod_dynamic(TableName:str,db:Session=Depends(get_db)):
-     item = db.query(TableName).all()
-     column_key = TableName.__table__.columns.keys()
+     if TableName == 'salary':
+          TableClass = Salary
+     elif TableName == 'raw_material':
+          TableClass = RawMaterial
+     item = db.query(TableClass).all()
+     column_key = TableClass.__table__.columns.keys()
      pdf_buffer = io.BytesIO()
      pdf = canvas.Canvas(pdf_buffer, pagesize=letter)
-     print("calounn key ```````````", column_key)
+     print("column key ```````````", column_key)
      # Set up the table headers
      table_headers = column_key
      table_widths = [0.5*inch, 2*inch, 0.5*inch, 0.5*inch]
