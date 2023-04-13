@@ -13,3 +13,4 @@ reportlab
 jinja2
 prettytable
 psycopg2
+pdfkit
