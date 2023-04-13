@@ -9,3 +9,7 @@ pytest
 # smtplib
 uvicorn
 gunicorn 
+reportlab
+jinja2
+prettytable
+psycopg2
