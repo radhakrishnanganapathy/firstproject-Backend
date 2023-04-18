@@ -10,10 +10,11 @@ router = APIRouter()
 def addword(word:str, db:Session=Depends(get_db)):
     check_word = TamilWords.getbyword(db=db, word=word)
     if check_word:
-          db_return = TamilWords.addwords(db=db, word=word)
-          return db_return
+          return ("already exist")
     else:
-         return ("no word found")
+         db_return = TamilWords.addwords(db=db, word=word)
+         return db_return
+         
 
 @router.get('/get-words')
 def getword(db:Session=Depends(get_db)):
