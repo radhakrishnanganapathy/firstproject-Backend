@@ -41,6 +41,8 @@ def pdf_downlaod_dynamic(TableName:str,db:Session=Depends(get_db)):
           TableClass = Production
      elif TableName == 'sales':
           TableClass = Sales
+     elif TableName == 'tamil_words':
+          TableClass = TamilWords
      else:
           return {'DB':'Not Found'}
      item = db.query(TableClass).all()

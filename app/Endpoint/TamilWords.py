@@ -23,7 +23,7 @@ def getword(db:Session=Depends(get_db)):
 
 @router.delete('/delete-words')
 def deleteword(word:str,db:Session=Depends(get_db)):
-    db_return = TamilWords.getword(db=db, word=word)
+    db_return = TamilWords.deleteword(db=db, word=word)
     return db_return
 
 
