@@ -26,5 +26,7 @@ class TamilWords(Base):
         return db.query(TamilWords).filter(TamilWords.words == word).first()
     
     def deleteword(db:Session, word:str):
-        return db.query(TamilWords).filter(TamilWords.words==word).delete()
+        db_return = db.query(TamilWords).filter(TamilWords.words==word).delete()
+        db.commit()
+        return db_return
     
