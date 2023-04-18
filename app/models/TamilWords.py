@@ -9,8 +9,8 @@ class TamilWords(Base):
     id = Column(Integer, primary_key=True, index=True)
     words = Column(String, nullable=False, index=True)
 
-    def addwords(db:Session, words:str):
-        db_return = TamilWords(words = words)
+    def addwords(db:Session, word:str):
+        db_return = TamilWords(words = word)
         db.add(db_return)
         db.commit()
         db.refresh(db_return)
@@ -22,4 +22,6 @@ class TamilWords(Base):
     def getbyletter(db:Session, letter:str):
         return db.query(TamilWords).filter(TamilWords.words.like(f'%{letter}%'))
     
+    def getbyword(db:Session, word:str):
+        return db.query(TamilWords).filter(TamilWords.words == word).first()
     

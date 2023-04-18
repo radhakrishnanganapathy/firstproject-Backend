@@ -8,8 +8,12 @@ router = APIRouter()
 
 @router.post('/add-words')
 def addword(word:str, db:Session=Depends(get_db)):
-    db_return = TamilWords.addwords(db=db, word=word)
-    return db_return
+    check_word = TamilWords.getbyword(db=db, word=word)
+    if check_word:
+          db_return = TamilWords.addwords(db=db, word=word)
+          return db_return
+    else:
+         return ("no word found")
 
 @router.get('/get-words')
 def getword(db:Session=Depends(get_db)):
