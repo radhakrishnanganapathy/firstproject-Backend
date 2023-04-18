@@ -21,6 +21,11 @@ def getword(db:Session=Depends(get_db)):
     db_return = TamilWords.getword(db=db)
     return db_return
 
+@router.delete('/delete-words')
+def deleteword(word:str,db:Session=Depends(get_db)):
+    db_return = TamilWords.getword(db=db, word=word)
+    return db_return
+
 
 @router.get('/get-words-by-letter')
 def getletter(letter: str,db:Session=Depends(get_db)):

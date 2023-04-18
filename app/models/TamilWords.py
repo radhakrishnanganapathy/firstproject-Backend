@@ -20,8 +20,11 @@ class TamilWords(Base):
         return db.query(TamilWords).all()
     
     def getbyletter(db:Session, letter:str):
-        return db.query(TamilWords).filter(TamilWords.words.like(f'%{letter}%'))
+        return db.query(TamilWords).filter(TamilWords.words.like(f'%{letter}%')).all()
     
     def getbyword(db:Session, word:str):
         return db.query(TamilWords).filter(TamilWords.words == word).first()
+    
+    def deleteword(db:Session, word:str):
+        return db.query(TamilWords).filter(TamilWords.words==word).delete()
     

@@ -3,6 +3,7 @@ from app.models.Production import Production
 from app.models.Salary import Salary
 from app.models.Sales import Sales
 from app.models.RawMaterial import RawMaterial
+from app.models.TamilWords import TamilWords
 from sqlalchemy.orm import Session
 from app.DataBase.db import get_db
 from fastapi import Depends, Body
