@@ -7,6 +7,8 @@ from app.Endpoint import RawMaterial
 from app.Endpoint import Sales
 from app.Endpoint import Salary
 from app.Endpoint import PDFDownloader
+from app.Endpoint import TamilWords
+
 
 
 api_router = APIRouter()
@@ -17,3 +19,4 @@ api_router.include_router(RawMaterial.router, prefix='/item', tags=['Raw Materia
 api_router.include_router(Sales.router, prefix='/sales', tags=['sales'])
 api_router.include_router(Salary.router, prefix='/salary', tags=['Salary'])
 api_router.include_router(PDFDownloader.router, prefix='/pdfdownloader', tags=['PDFDownloader'])
+api_router.include_router(TamilWords.router, prefix='/tamilwords', tags=['TamilWords'])
